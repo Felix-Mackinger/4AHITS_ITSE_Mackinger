@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <strong>Fach:</strong> {{ page.subject }} |
+      <strong>Klasse:</strong> {{ page.klasse }} |
+      <strong>Datum:</strong> {{ page.date }}
+      {% if page.partner %}
+        | <strong>Partner:</strong> {{ page.partner }}
+      {% endif %}
+    </p>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    © {{ site.time | date: "%Y" }} – {{ site.title }}
+  </footer>
+</body>
+</html>
