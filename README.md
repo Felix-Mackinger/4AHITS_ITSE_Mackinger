@@ -1,12 +1,5 @@
----
-title: "ITSE Arbeitsberichte"
-author: "Felix Mackinger"
-klasse: "4AHITS"
-subject: "ITSE"
-date: "2025-09-19"
----
-
 # 4AHITS_ITSE_Mackinger
+
 Repo for ITSE Lab
 
 
