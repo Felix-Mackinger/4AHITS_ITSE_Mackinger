@@ -1,3 +1,13 @@
+---
+title: "Berichte mit Github Pages"
+author: "Felix Mackinger"
+klasse: "4AHITS"
+subject: "ITSE"
+date: "2025-10-01"
+---
+
+# 1. Aufgabenstellung
+Aufsetzen und Einrichten der Laborumgebung.
 
 
 # Arbeitsbericht: Stylischer Arbeitsbericht mit GitHub Pages
