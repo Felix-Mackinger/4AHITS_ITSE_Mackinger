@@ -6,10 +6,6 @@ subject: "ITSE"
 date: "2025-09-19"
 ---
 
-# 1. Aufgabenstellung
-Aufsetzen und Einrichten der Laborumgebung.
-
-
 # 4AHITS_ITSE_Mackinger
 Repo for ITSE Lab
 
