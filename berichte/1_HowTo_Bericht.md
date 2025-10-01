@@ -19,7 +19,7 @@ Das Ziel ist eine klar strukturierte und optisch ansprechende Lösung, die ohne 
 ---
 
 ## 2. Voraussetzungen
-- GitHub-Account (https://github.com)  
+- GitHub-Account [https://github.com](https://github.com)  
 - Git installiert (optional, wenn lokal gearbeitet wird)  
 - Grundkenntnisse in Markdown (`.md` Dateien)
 
@@ -165,7 +165,7 @@ Button + Script einfügen (z. B. in index.md oder Layout)
 </script>
 ```
 
-[Erweiterte Version](berichte/HowTo_berichte/style.css)
+[Erweiterte Version](berichte/HowTo/style.css)
 
 Damit können Besucher jederzeit zwischen hellem und dunklem Modus wechseln.
 Die Einstellung bleibt im Browser gespeichert.
