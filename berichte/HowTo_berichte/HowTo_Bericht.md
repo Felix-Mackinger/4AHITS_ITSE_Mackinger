@@ -155,6 +155,8 @@ Button + Script einfügen (z. B. in index.md oder Layout)
 </script>
 ```
 
+[Erweiterte Version](berichte/HowTo_berichte/style.css)
+
 Damit können Besucher jederzeit zwischen hellem und dunklem Modus wechseln.
 Die Einstellung bleibt im Browser gespeichert.
 
