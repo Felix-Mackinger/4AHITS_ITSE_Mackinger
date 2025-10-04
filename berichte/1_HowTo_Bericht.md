@@ -165,7 +165,7 @@ Button + Script einfügen (z. B. in index.md oder Layout)
 </script>
 ```
 
-[Erweiterte Version](/berichte/HowTo/style.html)
+[Erweiterte Version](https://felix-mackinger.github.io/4AHITS_ITSE_Mackinger/berichte/HowTo/style.html)
 
 Damit können Besucher jederzeit zwischen hellem und dunklem Modus wechseln.
 Die Einstellung bleibt im Browser gespeichert.
