@@ -8,17 +8,30 @@
 </head>
 <body>
   <header>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+    <!-- Fach links oben -->
+    <div class="header-top-left">
+      <strong>Fach:</strong> {{ page.subject }}
+    </div>
+
+    <!-- Datum rechts oben -->
+    <div class="header-top-right">
+      <strong>Datum:</strong> {{ page.date }}
+    </div>
+
+    <!-- Titel -->
     <h1>{{ page.title }}</h1>
+
+    <!-- Name & Klasse unter Titel -->
     <p class="meta">
-      <strong>Fach:</strong> {{ page.subject }} |
-      <strong>Klasse:</strong> {{ page.klasse }} |
       <strong>Author:</strong> {{ page.author }} |
-      <strong>Datum:</strong> {{ page.date }}       
+      <strong>Klasse:</strong> {{ page.klasse }}
       {% if page.partner %}
         | <strong>Partner:</strong> {{ page.partner }}
       {% endif %}
     </p>
+
+    <!-- Theme Toggle rechts unten -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
   </header>
 
   <main>
