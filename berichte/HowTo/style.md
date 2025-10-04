@@ -98,6 +98,34 @@ header h1 {
   text-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Zurück-Button neben Fach */
+.header-top-left {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-back a {
+  text-decoration: none;
+  color: var(--meta-text);
+  background: var(--meta-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+.header-back a:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+
+
 .meta {
   margin-top: 0.8rem;
   font-size: 1rem;
@@ -208,5 +236,84 @@ pre, .highlight {
 .highlight::-webkit-scrollbar { height: 8px; }
 .highlight::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
 .highlight::-webkit-scrollbar-track { background: transparent; }
+.highlight::-webkit-scrollbar-track { background: transparent; }
 
+```
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} – {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <!-- Fach links oben mit Zurück-Button -->
+    
+    <div class="header-top-left">
+      <span class="header-back">
+         <a href="#" onclick="history.back(); return false;" title="Zurück">⬅️</a>
+      </span>
+      {% if page.subject %}
+      <strong>Fach:</strong> {{ page.subject }}
+      {% endif %}
+    </div>
+
+
+    <!-- Datum rechts oben -->
+    {% if page.date %}
+    <div class="header-top-right">
+      <strong>Datum:</strong> {{ page.date }}
+    </div>
+    {% endif %}
+
+    <!-- Titel -->
+    <h1>{{ page.title }}</h1>
+
+    <!-- Name & Klasse unter Titel -->
+    {% if page.author or page.klasse or page.partner %}
+    <p class="meta">
+      {% if page.author %}<strong>Author:</strong> {{ page.author }}{% endif %}
+      {% if page.klasse %}{% if page.author %} | {% endif %}<strong>Klasse:</strong> {{ page.klasse }}{% endif %}
+      {% if page.partner %}{% if page.author or page.klasse %} | {% endif %}<strong>Partner:</strong> {{ page.partner }}{% endif %}
+    </p>
+    {% endif %}
+
+    <!-- Theme Toggle rechts unten -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    © {{ site.time | date: "%Y" }} – {{ site.title }}
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme',
+        document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if(localStorage.getItem('theme') === 'dark'){
+      document.body.classList.add('dark');
+    }
+
+    // Zurück-Button Logik
+    function goBack(fach) {
+      if(document.referrer && document.referrer !== window.location.href){
+        history.back();
+      } else {
+        // Fallback: auf die Fach-Startseite
+        window.location.href = '/' + fach + '/';
+      }
+    }
+  </script>
+</body>
+</html>
 ```
