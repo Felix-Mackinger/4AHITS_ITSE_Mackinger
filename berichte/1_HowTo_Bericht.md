@@ -254,3 +254,25 @@ Beispiel:
 [https://nutzername.github.io/repo/](https://felix-mackinger.github.io/4AHITS_ITSE_Mackinger/)
 
 
+
+## 10. Zusatz
+
+Markdown codespace highlighting
+
+| *Sprache* | *Label für Markdown* |
+|---------|-----------------|
+| Allgemeiner Text / kein Highlight | `none` oder `text` |
+| Bash / Shell | `bash`, `sh`, `shell` |
+| Python | `python` |
+| JavaScript | `js`, `javascript` |
+| HTML | `html` |
+| CSS | `css` |
+| C# | `csharp` |
+| C / C++ | `c`, `cpp` |
+| Java | `java` |
+| JSON | `json` |
+| YAML | `yaml` |
+| Markdown | `markdown` |
+| SQL | `sql` |
+| Ruby | `ruby` |
+| PHP | `php` |
