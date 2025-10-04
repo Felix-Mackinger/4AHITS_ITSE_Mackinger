@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
 :root {
   --bg: #f5f7fa;
@@ -8,6 +9,16 @@
   --meta-text: #fff;
   --box-bg: #fff;
   --accent: #4A90E2;
+
+  /* Code colors (light mode) */
+  --code-bg: #f0f0f5;
+  --code-text: #2d2d2d;
+  --code-keyword: #7B4397;
+  --code-string: #008000;
+  --code-number: #1C00CF;
+  --code-comment: #999988;
+  --code-function: #AA0D91;
+  --code-variable: #004C99;
 }
 
 body.dark {
@@ -18,6 +29,16 @@ body.dark {
   --meta-text: #f0f0f0;
   --box-bg: #2a2a3b;
   --accent: #7dafff;
+
+  /* Code colors (dark mode) */
+  --code-bg: #282c34;
+  --code-text: #abb2bf;
+  --code-keyword: #c678dd;
+  --code-string: #98c379;
+  --code-number: #61afef;
+  --code-comment: #5c6370;
+  --code-function: #e5c07b;
+  --code-variable: #56b6c2;
 }
 
 body {
@@ -31,7 +52,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-
+/* --- HEADER --- */
 header {
   background: var(--header-gradient);
   color: var(--meta-text);
@@ -50,7 +71,6 @@ header h1 {
   color: #fff;
 }
 
-
 .meta {
   margin-top: 0.5rem;
   font-size: 1rem;
@@ -63,7 +83,6 @@ header h1 {
   backdrop-filter: blur(6px);
   line-height: 1.5;
 }
-
 
 .theme-toggle {
   position: absolute;
@@ -82,7 +101,7 @@ header h1 {
   background: rgba(255,255,255,0.3);
 }
 
-
+/* --- MAIN --- */
 main {
   background: var(--box-bg);
   padding: 2rem;
@@ -96,11 +115,47 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
+/* Inline code */
 code {
-  background: rgba(0,0,0,0.08);
+  background: var(--code-bg);
+  color: var(--code-text);
   padding: 0.2em 0.4em;
   border-radius: 4px;
-  font-family: monospace;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+}
+
+/* Code blocks */
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Syntax highlighting (manual basic version) */
+pre code .keyword { color: var(--code-keyword); font-weight: 600; }
+pre code .string { color: var(--code-string); }
+pre code .number { color: var(--code-number); }
+pre code .comment { color: var(--code-comment); font-style: italic; }
+pre code .function { color: var(--code-function); }
+pre code .variable { color: var(--code-variable); }
+
+/* Optional: subtle scrollbar styling */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}
+pre::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 img {
