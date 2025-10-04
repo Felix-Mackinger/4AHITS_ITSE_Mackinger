@@ -38,7 +38,7 @@ Das Ziel ist eine klar strukturierte und optisch ansprechende Lösung, die ohne 
 ## 4. Ordnerstruktur anlegen
 Empfohlene Struktur:
 
-```
+```none
 /_layouts
 └── default.html → Grundlayout für Seiten
 /assets
@@ -48,7 +48,7 @@ Empfohlene Struktur:
 └── faecher/ → Unterordner für Arbeitsberichte
 ```
 oder
-```
+```none
 /_layouts
 └── default.html → Grundlayout für Seiten
 /assets
