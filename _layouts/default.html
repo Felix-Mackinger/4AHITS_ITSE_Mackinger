@@ -12,7 +12,7 @@
     {% if page.subject %}
     <div class="header-top-left">
       <span class="header-back">
-        <a href="#" onclick="goBack('{{ page.subject | downcase }}'); return false;" title="Zurück">⬅️</a>
+         <a href="{{ '/' | relative_url }}" title="Zurück zur Startseite">⬅️ Zurück</a>
       </span>
       <strong>Fach:</strong> {{ page.subject }}
     </div>
