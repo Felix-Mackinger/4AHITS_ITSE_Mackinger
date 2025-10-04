@@ -215,6 +215,37 @@ pre, .highlight {
   margin: 1.5rem 0;
 }
 
+/* Copy-Button für Codeblocks */
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.15); /* helles Overlay für Light-Theme */
+  color: var(--text);
+  border: none;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Dark Theme Anpassung */
+body.dark .copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+/* Hover Effekt */
+.copy-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+
 /* Rouge Tokens */
 .highlight .c     { color: var(--code-comment); font-style: italic; }
 .highlight .k     { color: var(--code-keyword); font-weight: 600; }
@@ -236,8 +267,6 @@ pre, .highlight {
 .highlight::-webkit-scrollbar { height: 8px; }
 .highlight::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
 .highlight::-webkit-scrollbar-track { background: transparent; }
-.highlight::-webkit-scrollbar-track { background: transparent; }
-
 ```
 
 ```html
@@ -252,10 +281,9 @@ pre, .highlight {
 <body>
   <header>
     <!-- Fach links oben mit Zurück-Button -->
-    
     <div class="header-top-left">
       <span class="header-back">
-         <a href="#" onclick="history.back(); return false;" title="Zurück">⬅️</a>
+         <a href="{{ '/' | relative_url }}" title="Zurück zur Startseite">⬅️ Zurück</a>
       </span>
       {% if page.subject %}
       <strong>Fach:</strong> {{ page.subject }}
@@ -313,6 +341,34 @@ pre, .highlight {
         window.location.href = '/' + fach + '/';
       }
     }
+
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const codeBlocks = document.querySelectorAll("pre");
+    
+        codeBlocks.forEach(block => {
+          // Position relativ für Button
+          block.style.position = "relative";
+    
+          // Button erstellen
+          const button = document.createElement("button");
+          button.className = "copy-btn";
+          button.type = "button";
+          button.innerText = "Copy";
+    
+          block.appendChild(button);
+    
+          button.addEventListener("click", () => {
+            const code = block.querySelector("code");
+            if (!code) return;
+            navigator.clipboard.writeText(code.innerText).then(() => {
+              button.innerText = "Copied!";
+              setTimeout(() => button.innerText = "Copy", 1500);
+            });
+          });
+        });
+      });
+    
   </script>
 </body>
 </html>
