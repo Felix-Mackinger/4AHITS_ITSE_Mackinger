@@ -5,6 +5,7 @@
    🎨 Farbvariablen & Theme
    =========================================================== */
 
+
 :root {
   --bg: #f0f2f5;
   --text: #1c1c1e;
@@ -142,6 +143,30 @@ footer {
   font-size: 0.85rem;
   color: var(--text);
 }
+
+
+.header-top-left,
+.header-top-right {
+  position: absolute;
+  top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.header-top-left {
+  left: 2rem;
+}
+
+.header-top-right {
+  right: 2rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+
 
 /* ===========================================================
    💻 Code & Syntax Highlighting
