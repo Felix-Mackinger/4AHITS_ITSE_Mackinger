@@ -8,14 +8,12 @@
 </head>
 <body>
   <header>
-    <!-- Zurück-Button links oben -->
-    <div class="header-back">
-      <a href="javascript:history.back()" title="Zurück">⬅️ Zurück</a>
-    </div>
-
-    <!-- Fach links oben -->
+    <!-- Fach links oben mit Zurück-Button -->
     {% if page.subject %}
     <div class="header-top-left">
+      <span class="header-back">
+        <a href="#" onclick="goBack('{{ page.subject | downcase }}'); return false;" title="Zurück">⬅️</a>
+      </span>
       <strong>Fach:</strong> {{ page.subject }}
     </div>
     {% endif %}
@@ -57,9 +55,18 @@
       localStorage.setItem('theme',
         document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-    // load preference
     if(localStorage.getItem('theme') === 'dark'){
       document.body.classList.add('dark');
+    }
+
+    // Zurück-Button Logik
+    function goBack(fach) {
+      if(document.referrer && document.referrer !== window.location.href){
+        history.back();
+      } else {
+        // Fallback: auf die Fach-Startseite
+        window.location.href = '/' + fach + '/';
+      }
     }
   </script>
 </body>
