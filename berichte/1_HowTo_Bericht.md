@@ -239,21 +239,12 @@ Datei: `_layouts/default.html`
 ```
 --- 
 
-## 9. Ergebnis
-
-GitHub Pages zeigt die Arbeitsberichte online an.
-Das Layout ist modern, klar strukturiert und mit Light-/Dark-Mode nutzbar.
-Alle Inhalte können mit Markdown einfach gepflegt und erweitert werden.
-
-
 ## 9. Arbeitsbericht abgabe
 
 Um eine einfache abgabe zu gewährleisten, sucht man sich gleich am Anfang von seinem GitHub Pages die Webseite wo dann die HTML's angezeigt werden.
 
 Beispiel:
 [https://nutzername.github.io/repo/](https://felix-mackinger.github.io/4AHITS_ITSE_Mackinger/)
-
-
 
 ## 10. Zusatz
 
@@ -276,3 +267,16 @@ Markdown codespace highlighting
 | SQL | `sql` |
 | Ruby | `ruby` |
 | PHP | `php` |
+
+*PDF einfügen*
+```code
+[Alternativer Text der Beschreibt](https://repo-name.github.io/repo-name/weg/zum/pdf/DasPDF.pdf)
+```
+
+## 11. Ergebnis
+
+GitHub Pages zeigt die Arbeitsberichte online an.
+Das Layout ist modern, klar strukturiert und mit Light-/Dark-Mode nutzbar.
+Alle Inhalte können mit Markdown einfach gepflegt und erweitert werden.
+
+
