@@ -264,3 +264,42 @@ body.dark .copy-btn {
 .highlight::-webkit-scrollbar { height: 8px; }
 .highlight::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
 .highlight::-webkit-scrollbar-track { background: transparent; }
+
+/* --- Collapse (Details/Summary) Styling --- */
+details {
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  margin: 1em 0;
+  transition: background 0.3s ease;
+}
+
+details[open] {
+  background: var(--color-canvas-default);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-fg-default);
+  list-style: none;
+  position: relative;
+  padding-right: 1.2em;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.25s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(-180deg);
+}
