@@ -13,3 +13,5 @@ Repo for ITSE Lab
 
 ### [Arbeitsbericht vom 06.10.2025](https://felix-mackinger.github.io/4AHITS_ITSE_Mackinger/berichte/251006.html)
 
+### [Arbeitsbericht vom 13.10.2025](https://felix-mackinger.github.io/4AHITS_ITSE_Mackinger/berichte/251013.html)
+
