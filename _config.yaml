@@ -3,3 +3,9 @@ description: "Automatisierte Markdown-Reports"
 theme: null   # kein GitHub-Theme, wir nutzen unser eigenes Layout
 markdown: kramdown
 highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    line_numbers: true
