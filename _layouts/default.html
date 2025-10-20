@@ -97,6 +97,23 @@
         });
       });
 
+			// Support für Codeblöcke in <details>-Boxen
+      document.querySelectorAll("details.code-summary pre").forEach(block => {
+        block.style.position = "relative";
+        const button = document.createElement("button");
+        button.className = "copy-btn";
+        button.textContent = "Copy";
+        block.appendChild(button);
+      
+        button.addEventListener("click", () => {
+          const code = block.querySelector("code");
+          if (!code) return;
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => (button.textContent = "Copy"), 1500);
+          });
+        });
+      });
 
     
   </script>
