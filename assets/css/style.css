@@ -200,20 +200,7 @@ code {
 }
 
 
-/* Copy-Button für Codeblocks */
-.copy-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: rgba(255, 255, 255, 0.15); /* helles Overlay für Light-Theme */
-  color: var(--text);
-  border: none;
-  padding: 0.25rem 0.7rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+
 }
 
 /* Dark Theme Anpassung */
@@ -233,78 +220,63 @@ body.dark .copy-btn {
 
 
 /* ===========================================================
-   💻 Code & Syntax Highlighting (Update)
+   💻 Code & Syntax Highlighting – final version
    =========================================================== */
 
-/* Entfernt doppelten Rahmen & übermäßige Abstände */
-pre, .highlight {
+.highlight {
+  position: relative;
   background: var(--code-bg);
   color: var(--code-text);
-  padding: 1rem 1.2rem; /* etwas kompakter */
   border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
   overflow-x: auto;
-  box-shadow: none; /* <-- kein doppelter Schatten */
-  border: 1px solid rgba(0,0,0,0.1); /* dezenter Rahmen */
+  border: 1px solid rgba(0,0,0,0.1);
   font-family: 'Fira Code', monospace;
   font-size: 0.95em;
   line-height: 1.6;
-  margin: 1.2rem 0;
 }
 
-/* Entfernt Leerzeichen in der ersten Zeile */
-pre code {
-  display: block;
-  padding: 0;
-  margin: 0;
-  white-space: pre;
-  line-height: 1.5;
+/* Rouge line numbers */
+.highlight table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.highlight td.linenos {
+  user-select: none;
+  text-align: right;
+  padding-right: 1rem;
+  color: #888;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  vertical-align: top;
+}
+.highlight td.code {
+  padding-left: 1rem;
 }
 
-/* --- Erweiterte Summary-Box für mehrere Codeblöcke --- */
-details.code-summary {
-  background: var(--box-bg);
-  border: 1px solid var(--accent);
-  border-radius: 10px;
-  padding: 1rem 1.2rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-}
-
-details.code-summary[open] {
-  background: var(--bg);
-}
-
-details.code-summary summary {
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--accent);
-  list-style: none;
-  position: relative;
-  padding-right: 1.4rem;
-  margin-bottom: 0.8rem;
-}
-
-details.code-summary summary::marker {
-  display: none;
-}
-
-details.code-summary summary::after {
-  content: "▶";
+/* Copy-Button */
+.copy-btn {
   position: absolute;
-  right: 0;
-  top: 0;
-  transition: transform 0.25s ease;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.15);
+  color: var(--text);
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
-
-details.code-summary[open] summary::after {
-  transform: rotate(90deg);
+body.dark .copy-btn {
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
 }
-
-/* Inhalt innerhalb des Summary */
-details.code-summary > *:not(summary) {
-  margin-top: 0.6rem;
+.copy-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 
