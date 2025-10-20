@@ -199,18 +199,6 @@ code {
   font-size: 0.95em;
 }
 
-pre, .highlight {
-  background: var(--code-bg);
-  color: var(--code-text);
-  padding: 1.2rem 1.4rem;
-  border-radius: 14px;
-  overflow-x: auto;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  font-family: 'Fira Code', monospace;
-  font-size: 0.95em;
-  line-height: 1.6;
-  margin: 1.5rem 0;
-}
 
 /* Copy-Button für Codeblocks */
 .copy-btn {
@@ -239,6 +227,84 @@ body.dark .copy-btn {
   background: var(--accent);
   color: #fff;
   transform: scale(1.05);
+}
+
+
+
+
+/* ===========================================================
+   💻 Code & Syntax Highlighting (Update)
+   =========================================================== */
+
+/* Entfernt doppelten Rahmen & übermäßige Abstände */
+pre, .highlight {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 1rem 1.2rem; /* etwas kompakter */
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: none; /* <-- kein doppelter Schatten */
+  border: 1px solid rgba(0,0,0,0.1); /* dezenter Rahmen */
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin: 1.2rem 0;
+}
+
+/* Entfernt Leerzeichen in der ersten Zeile */
+pre code {
+  display: block;
+  padding: 0;
+  margin: 0;
+  white-space: pre;
+  line-height: 1.5;
+}
+
+/* --- Erweiterte Summary-Box für mehrere Codeblöcke --- */
+details.code-summary {
+  background: var(--box-bg);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+details.code-summary[open] {
+  background: var(--bg);
+}
+
+details.code-summary summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+  list-style: none;
+  position: relative;
+  padding-right: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+details.code-summary summary::marker {
+  display: none;
+}
+
+details.code-summary summary::after {
+  content: "▶";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.25s ease;
+}
+
+details.code-summary[open] summary::after {
+  transform: rotate(90deg);
+}
+
+/* Inhalt innerhalb des Summary */
+details.code-summary > *:not(summary) {
+  margin-top: 0.6rem;
 }
 
 
