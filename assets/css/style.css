@@ -191,10 +191,10 @@ footer {
    =========================================================== */
 
 code {
-  background: var(--code-bg);
+  background: none;
   color: var(--code-text);
   padding: 0.25em 0.5em;
-  border-radius: 6px;
+  border: none;
   font-family: 'Fira Code', monospace;
   font-size: 0.95em;
 }
